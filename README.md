@@ -1,7 +1,132 @@
-# Training-Days
+# Team Stats
 
-As a seasoned athlete, one of your favorite activities is running marathons. You use a service called Training Days that sends you a message for the event you signed up for and the days you have left to train.
 
-Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
+We want to create and extract information about your favorite sports team. Basketball, soccer, tennis, or water polo, you pick it. It’’s your job to create data using the JavaScript data structures at your disposal: arrays, objects, etc.
 
-Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/training-days
+Once created, you can manipulate these data structures as well as gain insights from them. For example, you might want to get the total number of games your team has played, or the average score of all of their games.
+
+If you get stuck during this project or would like to see an experienced developer work through it, click “Get Help“ to see a project walkthrough video.
+Tasks
+6/9Complete
+Mark the tasks as complete by checking them off
+Team Stats
+1.
+
+We want a data structure to store the information about our team. Create an empty team object.
+
+const team = {
+
+};
+
+2.
+
+Our team has players, and the team plays games. We want to represent both of these. Add two properties to your team object. A _players property and a _games property that are both initialized to empty arrays.
+
+Here is what you would do for the _games, make sure to include the _players as well!
+
+const team = {
+  _games: []
+};
+
+3.
+
+Populate the empty array that corresponds to the _players key in your team object with three actual players. They should be in the following format:
+
+{
+  firstName: 'Pablo',
+  lastName: 'Sanchez',
+  age: 11
+}
+
+You should put each player on a new line to prevent the line from getting too long.
+
+Here is an example, now add two more.
+
+const team = {
+  _players: [
+    {
+      firstName: 'Pete', 
+      lastName: 'Wheeler', 
+      age: 54
+    }
+  ]
+};
+
+4.
+
+Populate the empty array that corresponds to the _games key in your object with three actual games. They should be in the following format:
+
+{
+  opponent: 'Broncos',
+  teamPoints: 42,
+  opponentPoints: 27
+}
+
+Here is an example, now add two more.
+
+const team = {
+  _games: [
+    {
+      opponent: 'Broncos', 
+      teamPoints: 42, 
+      opponentPoints: 27
+    }
+  ]
+};
+
+5.
+
+Create getter methods for your _players and _games keys. You do not need to create setter methods, because we don’t want anyone to change the values saved to these keys.
+
+Here is an example of how you create a getter for the games property.
+
+const team = {
+   ...
+   get games() {
+       return this._games;
+   }
+   ...
+};
+
+6.
+
+We want to add a new player to your team. Add a method addPlayer to your team object. This method should take in three parameters: firstName, lastName, and age. It should create a player object, and add them to the team‘s players array.
+
+const team = {
+  ...
+  addPlayer(firstName, lastName, age) {
+    let player = {
+      firstName: firstName,
+      lastName: lastName,
+      age: age
+    };
+
+    this.players.push(player);
+  },
+  ...
+};
+
+7.
+
+Below your team object, invoke your addPlayer method on the following players: Steph Curry Age 28,Lisa Leslie Age 44, and Bugs Bunny Age 76.
+
+Print out the team‘s players to check they were all properly added.
+
+team.addPlayer('Steph', 'Curry', 28);
+
+8.
+
+The scorekeeper has some new information for us! Add a similar method for recording game results called addGame that:
+
+    takes in an opponent’s name,
+    your team’s points,
+    the opponent’s points,
+    creates a game object,
+    adds the game object to your team‘s games array.
+
+9.
+
+Invoke your addGame method on three games and print the team‘s updated games array.
+
+
+Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/team-stats
