@@ -1,50 +1,73 @@
-// The scope of `random` is too loose 
-const getRandEvent = () => {
-  const random = Math.floor(Math.random() * 3);
-  if (random === 0) {
-    return 'Marathon';
-  } else if (random === 1) {
-    return 'Triathlon';
-  } else if (random === 2) {
-    return 'Pentathlon';
-  }
-};
-
-// The scope of `days` is too tight 
-const getTrainingDays = event => {
-let days;
-  if (event === 'Marathon') {
-     days = 50;
-  } else if (event === 'Triathlon') {
-     days = 100;
-  } else if (event === 'Pentathlon') {
-     days = 200;
-  }
-
-  return days;
-};
-
-// The scope of `name` is too tight 
-const name = 'Nala';
-const logEvent = (event, name) => {
-  console.log(`${name}'s event is: ${event}`);
-};
-
-const logTime = (days, name) => {
+const team = {
+  _players : [
+  {
+  	firstName: 'Pablo',
+  	lastName: 'Sanchez',
+  	age: 11
+  },
+  {
+     firstName: 'Pete', 
+     lastName: 'Wheeler', 
+     age: 54
+    },
+    {
+     firstName: 'Faina', 
+     lastName: 'Bop', 
+     age: 40
+    } 
+  ],
   
-  console.log(`${name}'s time to train is: ${days} days`);
+  _games : [
+   {
+  	opponent: 'Broncos',
+ 	  teamPoints: 42,
+  	opponentPoints: 27
+   },
+    {
+  	opponent: 'Second',
+ 	  teamPoints: 90,
+  	opponentPoints: 10
+   },
+    {
+  	opponent: 'Third',
+ 	  teamPoints: 76,
+  	opponentPoints: 35
+   }
+  ],
+  get players() {
+    return this._players;
+  },
+  get games() {
+    return this._games;
+  },
+  
+  addPlayer(firstName, lastName, age) {
+ let player = {
+      firstName: firstName,
+      lastName: lastName,
+      age: age
+    };
+
+   this.players.push(player); 
+},
+  
+  addGame(opponent, teamPoints, opponentPoints) {
+    let game = {
+      opponent: opponent,
+      teamPoints: teamPoints,
+      opponentPoints: opponentPoints
+    };
+    
+     this.games.push(game);
+  }
 };
 
-const event = getRandEvent();
-const days = getTrainingDays(event);
+team.addPlayer ('Steph', 'Curry', 28);
+team.addPlayer ('Lisa', 'Leslie ', 44);
+team.addPlayer ('Bugs', 'Bunny', 76);
 
-// Define a `name` variable. Use it as an argument after updating logEvent and logTime 
-logEvent(event, name);
-logTime(days, name);
+team.addGame ('Lolo', 89, 56);
+team.addGame ('Hru', 33, 55);
+team.addGame ('Kria', 34, 77);
 
-const event2 = getRandEvent();
-const days2 = getTrainingDays(event2);
-const name2 = 'Warren';
-
-logEvent(event2, name2);
-logTime(days2, name2);
+console.log(team );
