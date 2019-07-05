@@ -1,50 +1,63 @@
-// The scope of `random` is too loose 
-const getRandEvent = () => {
-  const random = Math.floor(Math.random() * 3);
-  if (random === 0) {
-    return 'Marathon';
-  } else if (random === 1) {
-    return 'Triathlon';
-  } else if (random === 2) {
-    return 'Pentathlon';
-  }
-};
-
-// The scope of `days` is too tight 
-const getTrainingDays = event => {
-let days;
-  if (event === 'Marathon') {
-     days = 50;
-  } else if (event === 'Triathlon') {
-     days = 100;
-  } else if (event === 'Pentathlon') {
-     days = 200;
-  }
-
-  return days;
-};
-
-// The scope of `name` is too tight 
-const name = 'Nala';
-const logEvent = (event, name) => {
-  console.log(`${name}'s event is: ${event}`);
-};
-
-const logTime = (days, name) => {
+const menu = {
+  _courses: {
+    _appetizers: [],
+    _mains: [],
+    _desserts: [],
+  get appetizers() {return this._appetizers;},
+  set appetizers(appetizerIn) {this._appetizers = appetizerIn; }, 
+  get mains() {return this._mains;},
+  set mains(mainIn) {this._mains = mainIn;},
+  get desserts() {return this._desserts;  },
+  set desserts(dessertIn) {this._desserts = dessertIn;}
+  },// end of _courses object
   
-  console.log(`${name}'s time to train is: ${days} days`);
-};
+  get courses() {
+    return {
+      appetizers: this._courses.appetizers, 
+      mains: this._courses.mains,
+      desserts: this._courses.desserts
+    }
+  },// end of get courses()
+  
+  addDishToCourse(courseName, dishName, dishPrice) {
+    const dish = {
+      name: dishName,
+      price: dishPrice,
+    };// end of the dish variable
+     this._courses[courseName].push(dish);
+  },// end of the addDishToCourse method
+   
+getRandomDishFromCourse(courseName) {
+    const dishes = this._courses[courseName];
+    const randomIndex = Math.floor(Math.random() * dishes.length);
+    
+  // To validate if I return the right thing here
+  return dishes[randomIndex];
+  
+},// end of the getRandomDishFromCourse method
+  generateRandomMeal() {
+    const appetizer = this.getRandomDishFromCourse('appetizers');
+    
+    const main = this.getRandomDishFromCourse('mains');
+    
+    const dessert = this.getRandomDishFromCourse('desserts');
+    
+    const totalPrice = appetizer.price + main.price + dessert.price
+		
+    return `Your meal is ${appetizer.name}, ${main.name}, ${dessert.name}. The price is $${totalPrice}.`;
+  }// end of the generateRandomMeal method
+};// end of the menu object
+  
+	menu.addDishToCourse('appetizers', 'Caesar Salad', 4);
+  menu.addDishToCourse('appetizers', 'Olivie Salad', 5);
+  menu.addDishToCourse('appetizers', 'VesenniivSalad', 6);
+  menu.addDishToCourse('mains', 'Chili soup', 3);
+  menu.addDishToCourse('mains', 'Kholodnik', 5);
+  menu.addDishToCourse('mains', 'Okroshka', 77);
+  menu.addDishToCourse('desserts', 'Ice-cream', 2);
+  menu.addDishToCourse('desserts', 'Vareniki', 3);
+  menu.addDishToCourse('desserts', 'Tort', 1);
 
-const event = getRandEvent();
-const days = getTrainingDays(event);
+let meal = menu.generateRandomMeal();
 
-// Define a `name` variable. Use it as an argument after updating logEvent and logTime 
-logEvent(event, name);
-logTime(days, name);
-
-const event2 = getRandEvent();
-const days2 = getTrainingDays(event2);
-const name2 = 'Warren';
-
-logEvent(event2, name2);
-logTime(days2, name2);
+console.log(meal);
