@@ -48,12 +48,12 @@ getRandomDishFromCourse(courseName) {
   }// end of the generateRandomMeal method
 };// end of the menu object
   
-	menu.addDishToCourse('appetizers', 'Caesar Salad', 4);
+  menu.addDishToCourse('appetizers', 'Caesar Salad', 4);
   menu.addDishToCourse('appetizers', 'Olivie Salad', 5);
   menu.addDishToCourse('appetizers', 'VesenniivSalad', 6);
   menu.addDishToCourse('mains', 'Chili soup', 3);
   menu.addDishToCourse('mains', 'Kholodnik', 5);
-  menu.addDishToCourse('mains', 'Okroshka', 77);
+  menu.addDishToCourse('mains', 'Okroshka', 7);
   menu.addDishToCourse('desserts', 'Ice-cream', 2);
   menu.addDishToCourse('desserts', 'Vareniki', 3);
   menu.addDishToCourse('desserts', 'Tort', 1);
