@@ -1,7 +1,30 @@
-# Training-Days
+# Build a Library
 
-As a seasoned athlete, one of your favorite activities is running marathons. You use a service called Training Days that sends you a message for the event you signed up for and the days you have left to train.
+Congratulations, you’ve passed the grueling rigmarole of librarian school and have become head librarian at your local Books-‘N-Stuff.
 
-Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
+Just as you sit down, eager to utilize all those skills you learned in “Lib 203 - Shushing: How to Maintain Order While Spitting”, you realize you’re still using index cards to handle everything.
 
-Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/training-days
+But no matter, you know some JavaScript, so let’s get to work modernizing your new digs.
+
+Books-‘N-Stuff carries three different types of media: books, CDs, and movies. In this project you will create a parent class named Media with three subclasses: Book, Movie, and CD. These three subclasses have the following properties and methods:
+Book
+
+    Properties: author (string), title (string), pages (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty).
+    Getters: all properties have a getter
+    Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+Movie
+
+    Properties: director (string), title (string), runTime (number), isCheckedOut (boolean, initially false), and ratings (array, initially empty)
+    Getters: all properties have a getter
+    Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+CD
+
+    Properties: artist (string), title (string), isCheckedOut (boolean, initially false), and ratings (array, initially empty), songs (array of strings)
+    Getters: all properties have a getter
+    Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+If you’re looking for a challenge, try to create the four classes without using the steps below. 
+
+Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/build-a-library?action=resume_content_item
