@@ -1,7 +1,13 @@
-# Training-Days
+# WorkAround
 
-As a seasoned athlete, one of your favorite activities is running marathons. You use a service called Training Days that sends you a message for the event you signed up for and the days you have left to train.
+WorkAround is a human resources program that returns basic information about an employee, based on salary data. Using WorkAround, one can use an employee’s salary data to:
 
-Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
+    return the cadre of the of the employee, in other words, whether this employee is entry level, mid level, or senior level.
+    calculate employee tax rates
+    return employee benefits
+    calculate employee bonuses
+    calculate the total amount an employee can be reimbursed based on the total value of their health, housing, or wellness benefits
 
-Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/training-days
+WorkAround currently contains the data and functions in a single file, though they would like to modify the program so it makes use of JavaScript modules. Specifically, WorkAround you to demonstrate the different ways to export and import modules.
+
+Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/workaround?action=resume_content_item
