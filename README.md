@@ -1,7 +1,17 @@
-# Training-Days
+# Message Mixer
 
-As a seasoned athlete, one of your favorite activities is running marathons. You use a service called Training Days that sends you a message for the event you signed up for and the days you have left to train.
+Message Mixer is a messaging service that allows you to perform an action on input text and display the output of that behavior to the console. For example, with the current functions defined in Message Mixer, you can:
 
-Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
+    count the characters in a message
+    capitalize the first character of words
+    reverse a message’s words in place
+    reversing characters in place
+    replace the first occurrence of a string
+    replace all occurrences of a string
+    encode text by swapping certain characters for other characters
 
-Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/training-days
+At present, Message Mixer runs as a program in a single file. This single file includes functions that define behavior as well as the output. Message Mixer knows that by extracting the functions into a module, logic can be reused in different parts of our application.
+
+Let’s help Message Maker turn the program into a module!
+
+Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/message-mixer?action=resume_content_item
