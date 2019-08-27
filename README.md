@@ -1,7 +1,9 @@
-# Training-Days
+# Authorization Form
 
-As a seasoned athlete, one of your favorite activities is running marathons. You use a service called Training Days that sends you a message for the event you signed up for and the days you have left to train.
+A client just called you to say that they love their new website! There’s only one problem: they don’t like how their contact page displays their personal information for all to see.
 
-Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
+They’ve asked you to hide their website’s contact page behind a password form. In this project, you’ll accomplish this by using a React component to set up a simple authorization layer.
 
-Link: https://www.codecademy.com/courses/introduction-to-javascript/projects/training-days
+Let’s get started!
+
+Link: https://www.codecademy.com/courses/react-101/projects/authorization-form?action=resume_content_item
